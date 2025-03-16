@@ -1,0 +1,38 @@
+@model IEnumerable<JobRecruitmentWeb.Models.ViecLam>
+@{
+    ViewData["Title"] = "Search Jobs";
+}
+
+<h2>Search Jobs</h2>
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Job Title</th>
+            <th>Company</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var job in Model)
+        {
+            <tr>
+                <td>@job.TenCongViec</td>
+                <td>@job.CongTy.TenCongTy</td>
+                <td>@job.DiaChi</td>
+                <td>
+                    <form asp-action="ApplyForJob" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="jobId" value="@job.MaVL" />
+                        <input type="hidden" name="mssv" value="@ViewData["MSSV"]" />
+                        <div class="mb-3">
+                            <label for="cvFile" class="form-label">Upload CV</label>
+                            <input type="file" id="cvFile" name="cvFile" class="form-control" required />
+                        </div>
+                        <button type="submit" class="btn btn-success">Apply</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

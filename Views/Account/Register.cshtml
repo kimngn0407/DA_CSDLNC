@@ -1,0 +1,45 @@
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register</h2>
+
+<form asp-action="Register" method="post" class="mt-4">
+    <div class="mb-3">
+        <label for="Username" class="form-label">Username</label>
+        <input type="text" id="Username" name="username" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label for="Password" class="form-label">Password</label>
+        <input type="password" id="Password" name="password" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label for="Role" class="form-label">Role</label>
+        <select id="Role" name="role" class="form-select" onchange="toggleRecruiterFields(this.value)">
+            <option value="Student">Student</option>
+            <option value="Recruiter">Recruiter</option>
+        </select>
+    </div>
+    <div id="recruiterFields" style="display: none;">
+        <div class="mb-3">
+            <label for="CompanyName" class="form-label">Company Name</label>
+            <input type="text" id="CompanyName" name="companyName" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label for="TaxId" class="form-label">Tax ID</label>
+            <input type="text" id="TaxId" name="taxId" class="form-control" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="FullName" class="form-label">Full Name</label>
+        <input type="text" id="FullName" name="fullName" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+<script>
+    function toggleRecruiterFields(role) {
+        const recruiterFields = document.getElementById('recruiterFields');
+        recruiterFields.style.display = role === 'Recruiter' ? 'block' : 'none';
+    }
+</script>

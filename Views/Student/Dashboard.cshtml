@@ -1,0 +1,44 @@
+@model JobRecruitmentWeb.Models.SinhVien
+@{
+    ViewData["Title"] = "Student Dashboard";
+    var applications = ViewData["Applications"] as IEnumerable<JobRecruitmentWeb.Models.UngTuyen>;
+}
+
+<h2>Welcome, @Model.HoTen</h2>
+
+<div class="mt-4">
+    <h3>Your Applications</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Status</th>
+                <th>CV</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (applications != null && applications.Any())
+            {
+                @foreach (var application in applications)
+                {
+                    <tr>
+                        <td>@application.ViecLam.TenCongViec</td>
+                        <td>@application.TrangThai</td>
+                        <td><a href="/uploads/cvs/@application.CVPath" target="_blank">Download CV</a></td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-center">No applications found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="mt-4">
+    <h3>Search for Jobs</h3>
+    <a class="btn btn-primary" asp-controller="Student" asp-action="SearchJobs">Search Jobs</a>
+</div>

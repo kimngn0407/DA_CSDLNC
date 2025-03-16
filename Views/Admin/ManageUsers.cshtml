@@ -1,0 +1,34 @@
+@model IEnumerable<JobRecruitmentWeb.Models.TaiKhoan>
+
+<h2>Manage Users</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.TenDangNhap</td>
+                <td>@user.LoaiTaiKhoan</td>
+                <td>@user.TrangThai</td>
+                <td>
+                    <form asp-action="UpdateUserStatus" method="post">
+                        <input type="hidden" name="userId" value="@user.MaTK" />
+                        <select name="status" class="form-select">
+                            <option value="Active" selected>Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

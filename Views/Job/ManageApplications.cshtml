@@ -1,0 +1,35 @@
+@model IEnumerable<JobRecruitmentWeb.Models.UngTuyen>
+
+<h2>Manage Applications</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>CV</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var application in Model)
+        {
+            <tr>
+                <td>@application.SinhVien.HoTen</td>
+                <td><a href="/uploads/cvs/@application.CVPath" target="_blank">Download CV</a></td>
+                <td>@application.TrangThai</td>
+                <td>
+                    <form asp-action="UpdateApplicationStatus" method="post">
+                        <input type="hidden" name="applicationId" value="@application.MaUT" />
+                        <select name="status" class="form-select">
+                            <option value="Pending" selected>Pending</option>
+                            <option value="Accepted">Accepted</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

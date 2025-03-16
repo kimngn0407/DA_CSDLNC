@@ -1,0 +1,84 @@
+/* _content/JobRecruitmentWeb/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-lpwsned99y] {
+  white-space: nowrap;
+  text-align: left;
+  word-break: normal;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+a[b-lpwsned99y] {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover[b-lpwsned99y] {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.btn-primary[b-lpwsned99y] {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #0056b3;
+}
+
+.nav-pills .nav-link.active[b-lpwsned99y], .nav-pills .show > .nav-link[b-lpwsned99y] {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #0056b3;
+}
+
+.border-top[b-lpwsned99y] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-lpwsned99y] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-lpwsned99y] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-lpwsned99y] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-lpwsned99y] {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9rem;
+}
+
+.footer a[b-lpwsned99y] {
+  color: #ffc107;
+}
+
+.footer a:hover[b-lpwsned99y] {
+  color: #e0a800;
+}
+
+h1[b-lpwsned99y] {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+p.lead[b-lpwsned99y] {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+section[b-lpwsned99y] {
+  margin-bottom: 2rem;
+}

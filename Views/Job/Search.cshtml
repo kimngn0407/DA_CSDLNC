@@ -1,0 +1,38 @@
+<form method="get" action="/Job/Search" class="row g-3">
+    <div class="col-md-4">
+        <input type="text" name="keyword" placeholder="Search jobs..." class="form-control" />
+    </div>
+    <div class="col-md-3">
+        <select name="jobType" class="form-select">
+            <option value="">All</option>
+            <option value="Full-Time">Full-Time</option>
+            <option value="Part-Time">Part-Time</option>
+            <option value="Internship">Internship</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <input type="number" name="minSalary" placeholder="Min Salary" class="form-control" />
+    </div>
+    <div class="col-md-2">
+        <input type="number" name="maxSalary" placeholder="Max Salary" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <input type="text" name="category" placeholder="Job Category" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <input type="text" name="location" placeholder="Location" class="form-control" />
+    </div>
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+</form>
+
+<form method="post" enctype="multipart/form-data" action="/Job/Apply" class="mt-4">
+    <input type="hidden" name="jobId" value="@ViewData["JobId"]" />
+    <input type="hidden" name="mssv" value="@ViewData["MSSV"]" />
+    <div class="mb-3">
+        <label for="cvFile" class="form-label">Upload CV</label>
+        <input type="file" id="cvFile" name="cvFile" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Submit Application</button>
+</form>
